@@ -17,11 +17,11 @@ namespace Awesomeshop.Services.Orders.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> GetByUId(Guid id)
         {
             var query = new GetOrderById(id);
 
-            var result = _mediator.Send(query);
+            var result = await _mediator.Send(query);
 
             if(result == null) return NotFound();
 
@@ -33,9 +33,9 @@ namespace Awesomeshop.Services.Orders.Api.Controllers
         {
             var id = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(Get), new {id = id}, command );
+            return CreatedAtAction(nameof(GetByUId), new {id = id}, command );
         }
 
-        
+
     }
 }
