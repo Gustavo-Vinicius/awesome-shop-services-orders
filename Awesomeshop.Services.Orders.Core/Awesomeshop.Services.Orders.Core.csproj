@@ -1,8 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\Awesomeshop.Services.Orders.Infrastructure\Awesomeshop.Services.Orders.Infrastructure.csproj" />
-  </ItemGroup>
+
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
